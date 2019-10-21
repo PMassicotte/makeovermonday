@@ -44,7 +44,7 @@ p <- df %>%
     plot.caption = element_text(color = "gray75")
   ) +
   labs(
-    title = str_wrap("Trend by age group at which most people are dying by suicide England and Wales between 1981 and 2017", 50),
+    title = str_wrap("Temporal evolution by age group at which most people are dying by suicide in England and Wales between 1981 and 2017", 50),
     subtitle = str_wrap("There was a slight decrease between 1981 and 2008. However, the number of suicide seems to be increasing since the last decade.", 90),
     caption = "MakeoverMonday 2019W43 | Data source: Office for National Statistics | Visualization: @philmassicotte",
     fill = "Age"
