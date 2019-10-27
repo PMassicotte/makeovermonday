@@ -59,7 +59,7 @@ p2 <- df %>%
   summarise(yearly_sunshine_duration = sum(sunshine_duration)) %>%
   ungroup() %>%
   group_by(continent) %>%
-  top_n(5, yearly_sunshine_duration) %>%
+  top_n(10, yearly_sunshine_duration) %>%
   ungroup() %>%
   mutate(city = reorder_within(city, yearly_sunshine_duration, continent, max)) %>%
   mutate(continent = str_replace_all(continent, " ", "\n")) %>%
@@ -104,6 +104,6 @@ ggsave(
   here::here("graphs", "makeovermonday_2019w44.png"),
   device = "png",
   type = "cairo",
-  height = 8,
+  height = 10,
   width = 9
 )
