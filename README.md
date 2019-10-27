@@ -20,3 +20,7 @@ Weekly dataviz challenge from https://www.makeovermonday.co.uk/.
 ### Week  43
 
 ![](graphs/makeovermonday_2019w43.png)
+
+### Week  44
+
+![](graphs/makeovermonday_2019w44.png)
