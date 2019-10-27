@@ -91,7 +91,7 @@ p <- p1 + p2 +
   plot_theme(background = "#3c3c3c", padding = unit(c(0.25, 0.25, 0.25, 0.25), "cm")) +
   plot_annotation(
     title = str_wrap("World Cities Ranked by Average Annual Sunshine Hours", 100),
-    subtitle = str_wrap("Left: Number of hours of sunshine per month per city. Right: Top five cities with the most number of sunshine hours per continent.", 100),
+    subtitle = str_wrap("Left: Number of hours of sunshine per month per city. Right: Top ten cities with the most number of sunshine hours per continent.", 100),
     caption = "MakeoverMonday 2019W44 | Data Source: Wikipedia | Visualization: @philmassicotte",
     theme = theme(
       plot.title = element_text(color = "white"),
@@ -104,6 +104,6 @@ ggsave(
   here::here("graphs", "makeovermonday_2019w44.png"),
   device = "png",
   type = "cairo",
-  height = 10,
+  height = 11,
   width = 9
 )
