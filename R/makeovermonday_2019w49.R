@@ -28,7 +28,7 @@ subtitle <- "Although there are benefits to be part of a union, there is still a
 
 df_viz %>%
   ggplot(aes(x = year, y = median_usual_weekly_earnings)) +
-  geom_line(aes(color = union), size = 2) +
+  geom_line(aes(color = union), size = 2, lineend = "round") +
   xlab(NULL) +
   ylab("Median usual weekly earning") +
   scale_y_continuous(labels = scales::label_dollar()) +
