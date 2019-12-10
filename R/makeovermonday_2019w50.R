@@ -106,18 +106,17 @@ p <- most_popular %>%
     plot.caption = element_markdown(color = "gray75", size = 5, hjust = 0)
   )
 
+destfile <- here::here("graphs", "makeovermonday_2019w50.pdf")
+
 ggsave(
-  here::here("graphs", "makeovermonday_2019w50.pdf"),
+  destfile,
   device = cairo_pdf,
   height = 6,
   width = 7
 )
 
-ggsave(
-  here::here("graphs", "makeovermonday_2019w50.png"),
-  device = "png",
-  type = "cairo",
-  height = 6,
-  width = 7,
-  dpi = 600
-)
+knitr::plot_crop(destfile)
+
+bitmap <- pdftools::pdf_render_page(destfile, dpi = 600)
+destfile <- here::here("graphs", "makeovermonday_2019w50.png")
+png::writePNG(bitmap, destfile)
