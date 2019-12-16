@@ -44,9 +44,9 @@ nba <- df %>%
 # Plot --------------------------------------------------------------------
 
 explaination <- tibble(
-  desc = "The defensive rating is the number of points allowed per 100 possessions by a team. *Source: stats.nba.com/help/glossary/*",
+  desc = "The defensive rating is the number of points allowed per 100 possessions by a team.<br>*Source: stats.nba.com/help/glossary/*",
   x = 1996,
-  y = 90
+  y = 115
 )
 
 subtitle <- tibble(
@@ -59,10 +59,9 @@ subtitle <- tibble(
 
 df %>%
   ggplot(aes(x = season_start, y = def_rtg, group = team)) +
-  geom_line(
+  geom_point(
     color = "gray45",
-    size = 0.1,
-    lineend = "round"
+    size = 1
   ) +
   geom_line(
     data = spurs,
