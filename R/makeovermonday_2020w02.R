@@ -9,11 +9,13 @@ theme_set(theme_poppins())
 
 tmpfile <- tempfile(fileext = ".xlsx")
 
-tmpfile <- curl::curl_download("https://static-content.springer.com/esm/art%3A10.1186%2Fs12940-019-0488-0/MediaObjects/12940_2019_488_MOESM3_ESM.xlsx",
-                                destfile = tmpfile)
+tmpfile <-
+  curl::curl_download(
+    "https://static-content.springer.com/esm/art%3A10.1186%2Fs12940-019-0488-0/MediaObjects/12940_2019_488_MOESM3_ESM.xlsx",
+    destfile = tmpfile
+  )
 
-df <- readxl::read_excel(
-  tmpfile,
+df <- readxl::read_excel(tmpfile,
   sheet = "S10",
   range = "A3:F511"
 ) %>%
@@ -52,9 +54,12 @@ df_viz <- df %>%
 banned <- df_viz %>%
   filter(status_desc == "Banned")
 
-subtitle <- str_wrap(glue(
-  "The USA and China are lagging behind among the largest agricultural producers and users of pesticides in the world. Only {banned$n[banned$place == 'USA']} pesticides are banned in the USA and in China compared to Europe (n = {banned$n[banned$place == 'Europe']}) and Brazil (n = {banned$n[banned$place == 'Brazil']})."
-), 60)
+subtitle <- str_wrap(
+  glue(
+    "The USA and China are lagging behind among the largest agricultural producers and users of pesticides in the world. Only {banned$n[banned$place == 'USA']} pesticides are banned in the USA and in China compared to Europe (n = {banned$n[banned$place == 'Europe']}) and Brazil (n = {banned$n[banned$place == 'Brazil']})."
+  ),
+  60
+)
 
 p <- df_viz %>%
   ggplot(aes(fill = str_wrap(status_desc, 15), values = n)) +
@@ -115,9 +120,7 @@ p <- df_viz %>%
       family = "Open Sans",
       face = "bold"
     ),
-    plot.caption = element_text(
-      size = 8
-    )
+    plot.caption = element_text(size = 8)
   ) +
   guides(fill = guide_legend(
     label.position = "bottom",
@@ -129,8 +132,7 @@ p <- df_viz %>%
 pdf_file <- here::here("graphs", "makeovermonday_2020w02.pdf")
 png_file <- here::here("graphs", "makeovermonday_2020w02.png")
 
-ggsave(
-  pdf_file,
+ggsave(pdf_file,
   device = cairo_pdf,
   height = 9,
   width = 8
@@ -140,6 +142,3 @@ knitr::plot_crop(pdf_file)
 
 bitmap <- pdftools::pdf_render_page(pdf_file, dpi = 600)
 png::writePNG(bitmap, png_file)
-
-
-
