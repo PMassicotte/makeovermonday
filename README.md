@@ -54,3 +54,7 @@ Weekly dataviz challenge from https://www.makeovermonday.co.uk/.
 ### Week 2
 
 ![](graphs/makeovermonday_2020w02.png)
+
+### Week 3
+
+![](graphs/makeovermonday_2020w03.png)
