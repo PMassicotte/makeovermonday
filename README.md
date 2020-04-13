@@ -70,3 +70,7 @@ Weekly dataviz challenge from https://www.makeovermonday.co.uk/.
 ### Week 12
 
 ![](graphs/makeovermonday_2020w12.png)
+
+### Week 15
+
+![](graphs/makeovermonday_2020w15.png)
