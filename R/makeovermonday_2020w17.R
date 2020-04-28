@@ -147,7 +147,7 @@ p <- df_viz %>%
     "pickup truck - standard" = "#9CB290"
   )) +
   labs(
-    title = str_wrap("Pump prices over time: how much does it cost to drive 20 000 km per year?", 40),
+    title = str_wrap("Pump prices over time: how much does it cost to drive 20,000 km per year?", 40),
     subtitle = str_wrap("Fuel consumptions for each car type are averaged based on fuel consumption statistics using between 52 and 186 car models. The prices calculated are based on 20,000 km driven per year.", 130),
     caption = "MakeoverMonday 2020W17\nVisualization: @philmassicotte\nFuel prices: Department for Business, Energy & Industrial Strategy\nCar fuel consumption ratings: https://open.canada.ca/data/en/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64"
   ) +
